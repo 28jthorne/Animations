@@ -1,23 +1,5 @@
-let mySprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.sayText("Jumping Jacks")
     animation.runImageAnimation(
     mySprite,
     [img`
@@ -42,3 +24,31 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     false
     )
 })
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.sayText("Walk")
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `],
+    500,
+    false
+    )
+})
+let mySprite: Sprite = null
+mySprite = sprites.create(assets.image`stickfigure`, SpriteKind.Player)
